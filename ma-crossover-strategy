@@ -1,0 +1,113 @@
+# MA Crossover Strategy (Golden Cross / Death Cross)
+### Algorithmic Trading Research | EUR/USD Forex | Python
+
+A systematic trend-following strategy using **MA50/MA200 crossover** (Golden Cross & Death Cross) on EUR/USD daily data. Backtested over 3 years to evaluate performance on Forex markets.
+
+---
+
+## 📌 Strategy Logic
+
+| Component | Parameter |
+|---|---|
+| Asset | EUR/USD (`EURUSD=X`) |
+| Timeframe | Daily (1D) |
+| Data Period | Jan 2022 — Jan 2025 |
+| Fast MA | 50-day |
+| Slow MA | 200-day |
+
+**Golden Cross → BUY:** MA50 crosses above MA200 — signals start of uptrend
+
+**Death Cross → SELL:** MA50 crosses below MA200 — signals start of downtrend
+
+---
+
+## 📊 Performance Metrics
+
+| Metric | MA Strategy | Buy & Hold |
+|---|---|---|
+| Total Return | -20.33% | — |
+| Sharpe Ratio | -1.15 | — |
+| Max Drawdown | -22.36% | — |
+| Backtest Period | Jan 2022 — Jan 2025 | same |
+
+---
+
+## 🔍 Key Research Finding
+
+This result is intentionally included as a **negative result** — and negative results matter in research.
+
+The MA50/200 Golden Cross, widely used in equity markets, **significantly underperforms on EUR/USD Forex**. This failure reveals a core insight:
+
+> *Trend-following strategies optimized for equity markets do not directly transfer to Forex markets, which exhibit stronger mean-reverting behavior.*
+
+**Comparison across all three strategies in this series:**
+
+| Strategy | Total Return | Sharpe | Max Drawdown |
+|---|---|---|---|
+| RSI Mean Reversion | +6.53% | 0.55 | -2.28% |
+| EMA + RSI Combo | +11.11% | 0.42 | -8.68% |
+| MA Crossover | -20.33% | -1.15 | -22.36% |
+
+**Takeaway:** Mean reversion approaches (RSI-based) outperform trend-following (MA crossover) on EUR/USD — suggesting EUR/USD exhibits statistically significant mean-reverting price behavior over this period.
+
+---
+
+## 📈 Output Visualizations
+
+The script generates a 3-panel chart:
+- **Panel 1:** EUR/USD price with MA lines + Golden/Death Cross markers
+- **Panel 2:** MA Spread (MA50 - MA200) showing crossover momentum
+- **Panel 3:** Strategy equity curve vs Buy & Hold benchmark
+
+---
+
+## 🗂️ Repository Structure
+
+```
+ma-crossover-strategy/
+│
+├── ma_crossover.py              # Clean Python script
+├── outputs/
+│   └── ma_crossover_output.png  # Sample output chart
+└── README.md
+```
+
+---
+
+## ▶️ How to Run
+
+```bash
+pip install yfinance pandas numpy matplotlib
+python ma_crossover.py
+```
+
+Or open in **Google Colab** and run all cells.
+
+---
+
+## 🔗 Related Research
+
+| Strategy | Repository |
+|---|---|
+| RSI Mean Reversion | [rsi-mean-reversion-strategy](https://github.com/Nandani-Guptaa/rsi-mean-reversion-strategy) |
+| EMA Crossover + RSI Filter | [ema-rsi-combo-strategy](https://github.com/Nandani-Guptaa/ema-rsi-combo-strategy) |
+| MA Crossover *(this repo)* | — |
+
+> Part of an ongoing **Algorithmic Trading Research Series** on EUR/USD Forex market.
+
+---
+
+## 🛠️ Tech Stack
+
+```
+Python 3    yfinance    pandas    numpy    matplotlib
+```
+
+---
+
+## 👩‍💻 Author
+
+**Nandani Gupta** — B.Tech CSE (Data Science), PSIT Kanpur
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-nandaniiguptaa-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/nandaniiguptaa)
+[![GitHub](https://img.shields.io/badge/GitHub-Nandani--Guptaa-black?style=flat&logo=github)](https://github.com/Nandani-Guptaa)
